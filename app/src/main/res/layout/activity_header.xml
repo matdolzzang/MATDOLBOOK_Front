@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id = "@+id/header_menu_toolbar"
+        android:background="@color/matdolbookHeader"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="57dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/header_menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src ="@drawable/icon_hamburger"
+        />
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/header_search_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src = "@drawable/search_icon"
+            />
+            <ImageView
+                    android:id="@+id/header_noti_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/noti_icon"
+            />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.appcompat.widget.Toolbar>
