@@ -11,6 +11,8 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import com.example.kotlinpractice2.R
 
 class NavHeaderMainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -39,21 +41,28 @@ class NavHeaderMainActivity : AppCompatActivity(), NavigationView.OnNavigationIt
 
         navView.setNavigationItemSelectedListener(this)
     }
-
+    var backKeyPressedTime =0L
     override fun onBackPressed() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            val toast : Toast
+            if(System.currentTimeMillis() > backKeyPressedTime +2000){
+                backKeyPressedTime = System.currentTimeMillis()
+                toast = Toast.makeText(this, "\'뒤로\' 버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT);
+                toast.show()
+                return
+            }
+            if(System.currentTimeMillis() <= backKeyPressedTime +2000){
+                ActivityCompat.finishAffinity(this)
+             }
+
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.nav_header_main, menu)
-        return true
-    }
+
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
