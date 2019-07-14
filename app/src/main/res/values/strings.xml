@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">멧돌북clone</string>
-    <string name="title_activity_nav_header_main">nav_header_main</string>
+    <string name="title_activity_nav_header_main"></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">멧돌멧돌!!</string>
+    <string name="nav_header_subtitle">matdolpower@naver.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 

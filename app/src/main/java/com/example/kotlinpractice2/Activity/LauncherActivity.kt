@@ -15,7 +15,7 @@ class LauncherActivity : AppCompatActivity() {
         val launcherImage : ImageView = findViewById(R.id.launcher_img)
         launcherImage.setImageDrawable(getDrawable(R.drawable.loading_img))
         Handler().postDelayed(Runnable {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, NavHeaderMainActivity::class.java)
             startActivity(intent)
         },3000)
 
